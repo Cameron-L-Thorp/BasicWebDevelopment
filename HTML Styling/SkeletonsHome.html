@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .myDiv{
+                display: none;
+            }
+
+            header {
+            padding:5%;
+            height: 200;
+            text-align: center;
+            font-size: 100px;
+            color:darkorange;}
+
+            nav {width:100%;
+            height:100;
+            }
+
+            img{
+                align-content: center;
+                margin-left: 35%;
+                width: 400px;
+                display: none;
+            }
+
+            button{
+                width: auto;
+                height: 100;
+                background-color: darkorange;
+                font-size: 70px;
+                border-radius: 15px;
+                Padding: 10px;
+                margin: 10px;
+                font-family: 'Bell MT';
+            }
+
+            button:hover, input:hover, label:hover {cursor:pointer;}
+
+        </style>
+        <script>
+            function PictureDisplayer()
+            {
+                document.getElementById("skele").style.display="block";
+                console.log("Got into here");
+            }
+        </script>
+
+    </head>
+    <body style="background-image: url('pumpkin background.jpg');">
+        <header>Scary Stuff</header>
+        <img src="singleScarySkeleton.jpg" id="skele"/>
+        <nav>
+            <button name="Skeletons" id="skeles" onClick="SkeletonsPage.html" >Skeletons</button>
+            <button name="Skeleton"  onClick={PictureDisplayer()}>Skeleton</button>
+            <button name="Ghost" onClick="GhostPage.html">Ghost</button>
+            <button name="HeadlessHorseman" onClick="GhostPage.html">The Headless Horseman</button>
+        </nav>
+        <h3>Please enter how scared you are.</h3>
+        <form id="scareMeter" action="ScaryPage.html">
+            
+        <input type="radio" id="not" name="scare"/>
+        <label for="not">Not Scared</label>
+        <input type="radio" id="kindof" name="scare" value="one"/>
+        <label for="kindof">Kinda Scared</label>
+        <input type="radio" id="pretty" name="scare" value="one"/>
+        <label for="pretty">Pretty Spooked</label>
+        <input type="radio" id="very" name="scare" value="one"/>
+        <label for="very">Very Scared</label>
+        <input type="radio" id="terrified" name="scare" value="one"/>
+        <label for="terrified">Terrified!</label>
+        <input type="submit"/>
+        </form>
+        
+        
+        
+    </body>
+</html>
