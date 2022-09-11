@@ -1,0 +1,28 @@
+header{
+    height:350px;
+    background-color: transparent;
+    padding-top: 15px;
+}
+menu {
+    background-color: darkgray;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 25px;
+}
+article {
+    background-color: bisque;
+    border-radius: 25px;
+    vertical-align: top;
+    font-size: 1.5rem;
+    
+}
+.secHead {
+    margin-left: 25%;
+    font-size: 2.5rem;
+    padding-top: 10px;
+}
+.fullPar{
+    text-indent:40px;
+    margin-left: 15px;
+    margin-right:15px;
+}

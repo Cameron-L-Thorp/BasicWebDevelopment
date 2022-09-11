@@ -1,0 +1,72 @@
+<!--Write a HTML Page where you click on a button the text show Monday to Sunday i.e. everytime the button is clicked it should show each day for every button click.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Days of the week</title>
+
+        <style>
+            nav {
+                height: 15%;
+
+            }
+
+            button {
+                background-color: aquamarine;
+                font-size: 2rem;
+            }
+
+            button:hover{cursor: pointer;}
+
+            .Day {
+                background-color: aqua;
+                color: black;
+                font-size: 4rem;
+            }
+        </style>
+        <script>
+            const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let i=0;
+            function DayOfTheWeek()
+            {
+                
+                if (i > 6){
+                    i=0;
+                    document.getElementById("dayDisp").innerHTML = day[i];
+                    i++;
+                }
+                else{
+                    document.getElementById("dayDisp").innerHTML = day[i];
+                    i++;
+                }
+                
+            }
+            
+            const day2 = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            let x = 0;
+
+            function ShowWeekDay() {
+                if (x > 6) {
+                    x = 0;
+                    document.getElementById("dayofweek").innerHTML = day2[x];
+                     x++;
+                } else {
+                    document.getElementById("dayofweek").innerHTML = day2[x];
+                    x++;
+                }
+            }
+        </script>
+    </head>
+    <body style="background-color: gray;">
+        <nav>
+            <button onClick={DayOfTheWeek()}>NextDay</button>
+            
+        </nav>
+        <p class="Day" >The day of the week is <p class="Day" id="dayDisp">blank</p></p>
+
+        <nav>
+            <button onClick={ShowWeekDay()}>Steven's Day</button>
+            
+        </nav>
+        <p class="Day" >The day of the week is <p class="Day" id="dayofweek">blank</p></p>
+    </body>
+</html>

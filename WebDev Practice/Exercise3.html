@@ -1,0 +1,107 @@
+<!--Online Newspaper
+Using HTML 5 only, create a prototype of an online newspaper.
+Validate and verify the result on the browser as you proceed. Don’t mind about the visual aspect of the result (that will be taken care by using CSS).
+Use the site http://www.lipsum.com/ if you need to generate example paragraphs.
+Create separate sections for the header, menu and body of the newspaper. Use semantic tags (section, header, nav, …) for those sections…
+The header should have a title (h1), a subtitle (h2) and a logo (img).
+The menu should have links to each of the newspaper sections (sports, politics,…) organized using an unordered list (ul). These links can simply point to example URLs.
+The newspaper body should have a section for each news item. Use the semantic tag article.
+A news item should have a title (h3), an introduction (p) and an image (img). It should also have a footer containing the author name and date.
+Don’t forget to validate the page when you’re done.-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spooky Scary Skripts</title>
+        <link rel="icon" href="skeleicon.png">
+        <link rel="stylesheet" type="text/css" href="Exercise3.css">
+    </head>
+    <body style="background-image: url('haunted forest.jpg');font-family: 'Bell MT';">
+        <header>
+            <table>
+                <tr>
+                    <td width="75%">
+                        <h1 style="font-size:5rem;color:bisque;font-family:'Bell MT'; margin-left: 15%;">Spooky Scary Skripts<br></h1>
+                        <h2 style="font-size:3rem;color:bisque;font-family:'Bell MT'; margin-left: 25%;"><I>Terrifying Tales from Terrific Tellers</I></h2>
+                    </td>
+                    <td width="20%"><img src="singleScarySkeleton.jpg" alt="Skeleton logo of the newspaper." height="250" style="margin-left: 30%; margin-top:25px;"/></td>
+                </tr>
+            </table>
+        </header>
+        <table>
+            <tr>
+                <td width="26%">
+                    <menu>
+                        <ul style="list-style-type: '\1F5E1';"><h3>Categorized Articles</h3>
+                            <li><h4>Ghosts</h4>
+                                <ul style="list-style-type: '\1F47B';">
+                                    <li ><a href="https://www.ghostsandgravestones.com/types-of-ghosts" target="_blank">Ghost Types</a></li>
+                                    <li><a href="https://www.rd.com/article/ghost-stories/" target="_blank">Ghost Stories</a></li>
+                                    <li><a href="https://ghost-official.com/" target="_blank">Ghost (the band)</a></li>
+                                </ul>
+                            </li>
+                            <li><h4>Skeletons</h4>
+                                <ul style="list-style-type: '\1F480';">
+                                    <li><a href="https://villains.fandom.com/wiki/Skeletons_(folklore)" target="_blank">Skeleton Types</a></li>
+                                    <li><a href="https://www.wattpad.com/stories/skeleton" target="_blank">Skeleton Stories</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=n_qbGJuxCYY" target="_blank">Skeleton Tunes</a></li>
+                                </ul>
+                            </li>
+                            <li><h4>Pirates</h4>
+                                <ul style="list-style-type: '\1F3F4';">
+                                    <li><a href="https://owlcation.com/humanities/What-is-and-was-a-Pirate" target="_blank">Pirate Types</a></li>
+                                    <li><a href="https://americanfolklore.net/folklore/pirate-stories/" target="_blank">Pirate Stories</a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=xl-Ylb7NlCY" target="_blank">Pirate Jigs</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </menu>
+                </td>
+                <td width="4%"></td>
+                <td width="70%">
+                    <article>
+                        <h3 class="secHead"> Summation of Ghost Lore</h3>
+                        <table>
+                            <tr>
+                                <td width="60%">
+                                    <p class="fullPar">Ghosts as an overall category are both fascinating and terrifying to the average person. There are many different types 
+                                        and temperaments within the broad category of ghosts, though all have their place in the supernatural realm and lore of various human cultures.
+                                        It is often-times argued that the manner in which the living being passed to the spiritual plane dictates both if their soul becomes a 
+                                        ghost, and the methods they interact with their surroundings. Many cultures to this day have reverence for these souls, while others maintain
+                                        a distinct fear, but the frequency legends and tales surrounding ghosts exist indicate there is more than meets the eye. <br>
+                                    </p>
+                                    <p class="fullPar"><i>-Cameron Thorp 20220831</i><br>
+                                    </p>
+                                </td>
+                                <td>
+                                    <img src="ghost pic.jpg" alt="Picture of a spirit captured on an old staircase." width="45%" style="margin-left:20%;"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </article>
+                    <article>
+                        <h3 class="secHead"> Summation of Pirates</h3>
+                        <table>
+                            <tr>
+                                <td >
+                                    <img src="pirate.jpg" alt="" width="60%" style="margin-left:20%;"/>
+                                </td>
+                                <td width="70%">
+                                    <p class="fullPar">Through the ages, there have been many groups of violent and unlawful individuals, and few are more notorious than
+                                        pirates! Although there has been centuries of folktales and fictional stories, mudding the waters, surrounding these outlaws, few
+                                        do justice to the true tales. From the betrayal and resurgence of Henry Avery, to the womanizing and terror of Edward Thatch, to
+                                        the household name Henry Morgan, to the flamboyant and audacious Jack Rackham, the good the bad and the ugly characters who partook
+                                        in this lifestyle simply cannot be captured in any single account. Some view them as truly free and equal, some see them as scoundrels 
+                                        and thieves, but most acknowledge they were globally pivotal in more than one historical period.<br>
+                                    </p>
+                                    <p class="fullPar"><i>-Cameron Thorp 20220831</i><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </article>
+                </td>
+            </tr>
+        </table>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<!--Create a HTML form with the following fields and add appropriate validations
+
+ 
+
+a) Full name - validate for alphabets and numbers
+b) Email address - validate for email
+c) Tour Package (US, Europe, Australia and New Zealand) - can choose only one
+d) Arrival Date - validate for date
+e) No. of persons - validate for number
+f) What additional things need to be included (Boarding, Food, Sight Seeing) - Can choose multiple
+g) Discount coupon code
+h) Agree to terms and conditions (Yes or No) - can choose only one
+i) Submit button with text "Complete reservation"-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .leading {
+                font-size: 1.5rem;
+                font-weight: 600;
+                font-family: "Bell MT";
+            }
+        </style>
+        <script>
+            function formVal(){
+                /*let fN = document.forms["allInfo"]["firstname"].value;
+                let lN = document.forms["allInfo"]["lastname"].value;*/
+                fNameVal();
+                lNameVal();
+                emailVal();
+                numPeopleVal();
+                agreeVal();
+            }
+
+            function fNameVal(){
+                let x = document.forms["allInfo"]["firstname"].value;
+                if (x == "")
+                {
+                    alert("Please enter a first name.");
+                    return false;
+                }
+            }
+
+            function lNameVal(){
+                let x = document.forms["allInfo"]["lastname"].value;
+                if (x == "")
+                {
+                    alert("Please enter a last name.");
+                    return false;
+                }
+            }
+
+            function emailVal(){
+                let x = document.forms["allInfo"]["email"].value;
+                if ((x == "") || (!x.includes("@"))){
+                    alert("Please enter a valid email.");
+                    return false;
+                }
+            }
+
+            function numPeopleVal(){
+                let x = document.forms["allInfo"]["noPer"].value;
+                if(x < 1){
+                    alert("Reservation can only be made for one or more people.")
+                    return false;
+                }
+            }
+            
+            function agreeVal()
+            {
+                let x = document.getElementById("yes").checked;
+                if (!x){
+                    alert("To complete the reservation, you must agree to terms and conditions.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form id="allInfo" onSubmit="return formVal()">
+            <label class="leading" for="firstname">Full Name <br></label>
+            <input type="text" name="pInfo" id="firstname" placeholder="First Name" required/>
+            <input type="text" name="pInfo" id="lastname" placeholder="Last Name" required/>
+
+            <label class="leading" for="email"><br><br>Email Address<br></label>
+            <input type="email" name="pInfo" id="email" placeholder="j.guitar@email.com" required />
+
+            <label class="leading" ><br><br>Tour Package<br></label>
+            <input type="radio" name="pInfo" id="us" required/>
+            <label for="us">US Tour</label>
+            <input type="radio" name="pInfo" id="eu"/>
+            <label for="eu">Europe Tour</label>
+            <input type="radio" name="pInfo" id="au"/>
+            <label for="au">Australia Tour</label>
+            <input type="radio" name="pInfo" id="nz"/>
+            <label for="nz">New Zealand Tour</label>
+
+            <label class="leading" for="avlDate"><br><br>Arrival Date<br></label>
+            <input type="date" name="pInfo" id="avlDate" required/>
+
+            <label class="leading" for="noPer"><br><br>Number of people in your party<br></label>
+            <input type="number" name="pInfo" id="noPer" value=1 min="1" max="20"/>
+
+            <label class="leading" ><br><br>What else would you like to include in your package?<br></label>
+            <input type="checkbox" name="pInfo" id="boarding"/>
+            <label for="boarding">Boarding<br></label>
+            <input type="checkbox" name="pInfo" id="food"/>
+            <label for="food">Food<br></label>
+            <input type="checkbox" name="pInfo" id="sSeeing"/>
+            <label for="sSeeing">Sight Seeing<br></label>
+
+            <label class="leading" for="cCode"><br>Coupon Code<br></label>
+            <input type="textbox" name="pInfo" id="cCode" placeholder="XXX-XXX-XXX" pattern="[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}-[a-zA-Z0-9]{3}"/>
+
+            <label class="leading" ><br><br>Do you agree to the <a class="leading" href="TandC.html">terms and conditions</a>?<br></label>
+            <input type="radio" name="agree" id="yes" required/>
+            <label for="yes">Yes</label>
+            <input type="radio" name="agree" id="no"/>
+            <label for="no">No<br><br></label>
+            <input style="font-family:'Bell MT';font-size:1.5rem;font-weight:600;" type="submit" value="Complete Reservation"/>
+        </form>
+    </body>
+</html>
