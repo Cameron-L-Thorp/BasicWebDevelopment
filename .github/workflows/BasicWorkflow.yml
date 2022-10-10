@@ -1,0 +1,57 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Individual tester'
+        default: 'Joe Shmuckateli'
+        required: false
+        type: string
+      city:
+        description: 'City location'
+        default: 'Arkham'
+        type: choice
+        options:
+        - Arkham
+        - Innsmouth
+        - Dunwitch
+        - Rlyeh
+      following:
+        description: 'Who is your representative?'
+        required: true
+        type: string
+
+jobs:
+  greet:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+    - name: Identity verification
+      run: |
+        echo "You are ${{ github.event.inputs.name }}"
+        echo "Located in ${{ github.event.inputs.city }}"
+        echo "Representing ${{ github.event.inputs.following }}"
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
